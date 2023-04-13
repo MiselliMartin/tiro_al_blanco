@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     pincel.fillStyle = "white";
     pincel.textAlign = "center";
     pincel.fillText("¡Da click en el botón para iniciar!", pantalla.width/2, pantalla.height/2);
+    var enCurso = false;
 
     function limpiarPantalla() {
         pincel.clearRect(0,0,600,400);
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function juego() {
+        enCurso = true;
         document.getElementById("begin").innerHTML = "Restart";
         limpiarPantalla();
         pincel.fillStyle = "grey";
@@ -64,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 document.getElementById("puntos").innerHTML = "Falta práctica! Tus puntos fueron: " + puntos;
             }
+        enCurso = false;
         }
     }
 
@@ -90,11 +93,23 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     document.getElementById("begin").addEventListener("click", function() {
-    intervalo = setInterval(juego, 1000);
-    puntos = 0;
-    i = 0;
-    document.getElementById("puntos").innerHTML = "";
-    });
+    puntos=0
+    if (enCurso == false) {
+        intervalo = setInterval(juego, 1000);
+        puntos = 0;
+        i = 0;
+        document.getElementById("puntos").innerHTML = "";
+    } else {
+        limpiarPantalla()
+        pincel.fillStyle = "grey";
+        pincel.fillRect(0,0,600,400);
+        i = 0;
+        puntos = 0;
+        document.getElementById("puntos").innerHTML = "";
+        clearInterval(intervalo);
+        intervalo = setInterval(juego, 1000);
+    }
+});
 
     pantalla.onclick = acertar;
 
