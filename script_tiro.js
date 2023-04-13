@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     pincel.textAlign = "center";
     pincel.fillText("¡Da click en el botón para iniciar!", pantalla.width/2, pantalla.height/2);
     var enCurso = false;
+    var soloUno = false;
 
     function limpiarPantalla() {
         pincel.clearRect(0,0,600,400);
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
 
     function hacerDiana(x, y) {
+        soloUno = false
         hacerCircunferencia(x, y, 30, "red");
         hacerCircunferencia(x, y, 20, "white");
         hacerCircunferencia(x, y, 10, "red");
@@ -73,15 +75,19 @@ document.addEventListener("DOMContentLoaded", function() {
     function acertar(evento) {
         var x = evento.pageX - pantalla.offsetLeft;
         var y = evento.pageY - pantalla.offsetTop;
-
-        if ((x > xAleatorio - 10) && (x < xAleatorio + 10) && (y < yAleatorio+10) && (y>yAleatorio-10)) {
-            puntos = puntos + 10
-        } else if ((x > xAleatorio - 20) && (x < xAleatorio + 20) && (y < yAleatorio+20) && (y>yAleatorio-20)) {
-            puntos = puntos + 5
-        } else if ((x > xAleatorio - 30) && (x < xAleatorio + 30) && (y < yAleatorio+30) && (y>yAleatorio-30)) {
-            puntos = puntos + 1
+        
+        if (soloUno == false) {
+            if ((x > xAleatorio - 10) && (x < xAleatorio + 10) && (y < yAleatorio+10) && (y>yAleatorio-10)) {
+                puntos = puntos + 10
+                soloUno = true
+            } else if ((x > xAleatorio - 20) && (x < xAleatorio + 20) && (y < yAleatorio+20) && (y>yAleatorio-20)) {
+                puntos = puntos + 5
+                soloUno = true
+            } else if ((x > xAleatorio - 30) && (x < xAleatorio + 30) && (y < yAleatorio+30) && (y>yAleatorio-30)) {
+                puntos = puntos + 1
+                soloUno = true
+            }
         }
-
         return puntos
     }
 
