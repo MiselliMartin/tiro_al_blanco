@@ -1,0 +1,31 @@
+body {
+  background-color: sandybrown;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid black;
+  }
+  
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: lightblue;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  p {
+    margin: 20px auto;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+  }
+  
