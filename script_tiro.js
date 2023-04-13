@@ -48,11 +48,11 @@ document.addEventListener("DOMContentLoaded", function() {
             pincel.fillStyle = "grey";
             pincel.fillRect(0,0,600,400);
             mensajeFinal()
-            if (puntos == 50) {
+            if (puntos == 100) {
                 document.getElementById("puntos").innerHTML = "Felicidades! Tu resultado fue perfecto! Tus puntos fueron: " + puntos;
-            } else if (puntos > 30) {
+            } else if (puntos > 70) {
                 document.getElementById("puntos").innerHTML = "Bien hecho! Tus puntos fueron: " + puntos;
-            } else if (puntos > 20) {
+            } else if (puntos > 50) {
                 document.getElementById("puntos").innerHTML = "Podría ser mejor... Tus puntos fueron: " + puntos;
             } else if (puntos == 0) {
                 document.getElementById("puntos").innerHTML = "Wtf bro! Tus puntos fueron: " + puntos;
