@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     function juego() {
+        document.getElementById("begin").innerHTML = "Restart";
         limpiarPantalla();
         pincel.fillStyle = "grey";
         pincel.fillRect(0,0,600,400); 
