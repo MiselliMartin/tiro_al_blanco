@@ -9,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var i = 0;
     var intervalo;
     var puntos = 0;
+    pincel.font = "30px Arial";
+    pincel.fillStyle = "white";
+    pincel.textAlign = "center";
+    pincel.fillText("¡Da click en el botón para iniciar!", pantalla.width/2, pantalla.height/2);
 
     function limpiarPantalla() {
         pincel.clearRect(0,0,600,400);
@@ -42,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
         yAleatorio = aleatorio(400);
         hacerDiana(xAleatorio,yAleatorio,10);
         i++;
-        if (i >= 10) {
+        if (i >= 11) {
             clearInterval(intervalo);
             limpiarPantalla()
             pincel.fillStyle = "grey";

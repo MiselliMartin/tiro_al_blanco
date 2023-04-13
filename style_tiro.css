@@ -20,6 +20,12 @@ canvas {
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
   }
+
+  button:active {
+    background-color: darkblue;
+    color: white;
+    box-shadow: none;
+  }
   
   p {
     margin: 20px auto;
